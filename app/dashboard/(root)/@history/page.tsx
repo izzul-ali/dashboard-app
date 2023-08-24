@@ -1,6 +1,7 @@
 'use client';
 
 import { AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
+import CardTitle from '~/components/card-title';
 
 const data = [
   {
@@ -25,10 +26,8 @@ const data = [
 
 export default function History() {
   return (
-    <div className="bg-white rounded p-2 shadow-sm w-full">
-      <h1 className="md:text-lg font-bold text-gray-800">Pipelines value history</h1>
-
-      <div className="mt-5 h-52 w-full p-3 text-xs font-medium text-gray-700">
+    <CardTitle title="Pipeline value history">
+      <div className="h-64 md:h-52 mt-10 w-full text-xs font-medium text-gray-700">
         <ResponsiveContainer width="100%" height="100%">
           <AreaChart
             width={500}
@@ -45,12 +44,12 @@ export default function History() {
             <XAxis dataKey="name" />
             <YAxis />
             <Tooltip />
-            <Area type="monotone" dataKey="pipeline_1" stackId="1" stroke="#8884d8" fill="#8884d8" />
-            <Area type="monotone" dataKey="pipeline_2" stackId="1" stroke="#82ca9d" fill="#82ca9d" />
-            <Area type="monotone" dataKey="pipeline_3" stackId="1" stroke="#ffc658" fill="#ffc658" />
+            <Area type="monotone" dataKey="pipeline_1" stackId="1" stroke="#1a6cc9" fill="#1a6cc9" />
+            <Area type="monotone" dataKey="pipeline_2" stackId="1" stroke="#9c9824" fill="#9c9824" />
+            <Area type="monotone" dataKey="pipeline_3" stackId="1" stroke="#1830c9" fill="#1830c9" />
           </AreaChart>
         </ResponsiveContainer>
       </div>
-    </div>
+    </CardTitle>
   );
 }

@@ -23,7 +23,7 @@ export default function Sidebar() {
       ></div>
 
       <aside
-        className={`p-4 lg:px-7 absolute z-20 left-0 h-screen bg-white w-fit transition-transform duration-200 ease-in ${
+        className={`p-4 lg:px-7 absolute z-20 left-0 h-screen bg-white dark:bg-gray-950 w-fit transition-transform duration-200 ease-in ${
           openSidebar ? 'translate-x-0' : '-translate-x-full'
         } lg:relative lg:translate-x-0`}
       >
@@ -37,7 +37,7 @@ export default function Sidebar() {
 
         <div className="flex items-center gap-x-2 text-lg mb-10">
           <SiApacheecharts />
-          <h1 className="font-bold text-gray-700">SalesGang</h1>
+          <h1 className="font-bold text-gray-700 dark:text-gray-200">SalesGang</h1>
         </div>
 
         <Navbar hideSidebar={setOpenSidebar} />
@@ -93,9 +93,9 @@ function navbar({ hideSidebar }: { hideSidebar: Dispatch<SetStateAction<boolean>
             key={menu.title}
             onClick={() => hideSidebar(false)}
             href={menu.url}
-            className={`flex items-center gap-x-4 p-2 rounded ${
-              pathname === menu.url && 'bg-blue-100 text-blue-700'
-            } hover:bg-blue-50 hover:text-blue-500 cursor-pointer text-base`}
+            className={`flex items-center gap-x-4 py-2 px-4 rounded ${
+              pathname === menu.url && 'bg-blue-100 dark:bg-gray-800 text-blue-600'
+            } hover:bg-blue-50 dark:hover:bg-gray-800 hover:text-blue-600 cursor-pointer text-base`}
           >
             {menu.icon}
             <span className="whitespace-nowrap text-sm font-semibold">{menu.title}</span>

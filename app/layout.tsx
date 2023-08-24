@@ -1,6 +1,7 @@
 import './globals.css';
 import type { Metadata } from 'next';
 import { Montserrat } from 'next/font/google';
+import NextThemeProvider from '~/components/theme';
 
 const montserrat = Montserrat({ subsets: ['latin'] });
 
@@ -11,8 +12,11 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en">
-      <body className={montserrat.className}>{children}</body>
+    // https://reactjs.org/docs/dom-elements.html#suppresshydrationwarning:~:text=It%20only%20works%20one%20level%20deep
+    <html lang="en" suppressHydrationWarning>
+      <body className={`${montserrat.className} overflow-x-hidden bg-gray-50 dark:bg-gray-950 dark:text-white`}>
+        <NextThemeProvider>{children}</NextThemeProvider>
+      </body>
     </html>
   );
 }

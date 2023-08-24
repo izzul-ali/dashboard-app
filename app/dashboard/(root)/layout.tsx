@@ -6,12 +6,12 @@ interface IRootLayout {
 
 export default function RootLayout({ history, changes, overview }: IRootLayout) {
   return (
-    <div className="">
-      {history}
-      <div className="md:flex gap-x-4 mt-5">
+    <div className="w-full dark:bg-gray-950 p-2 rounded">
+      <div className="w-full mb-10 space-y-5 md:space-y-0 md:flex md:justify-cemter md:gap-x-4">
         {changes}
         {overview}
       </div>
+      {history}
     </div>
   );
 }
